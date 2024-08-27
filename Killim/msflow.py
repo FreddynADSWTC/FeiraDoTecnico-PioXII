@@ -3,7 +3,6 @@ import random
 import time
 import keyboard
 
-
 screenWidth, screenHeight = pyautogui.size()
 
 i = 2
@@ -27,6 +26,7 @@ while i > 0:
        print('Keyboard is active')
        pyautogui.write('INFECTED!', interval=0.05)
     pyautogui.moveTo(RX, RY)
+    pyautogui.FAILSAFE = False
     print('i:', i)
    
     
@@ -34,7 +34,7 @@ while i > 0:
      print('Parando o código')
      i = 3
 
-    time.sleep(0.5)
+    time.sleep(0.1)
     
 
    if i == 3:
@@ -43,4 +43,6 @@ while i > 0:
       time.sleep(3)
       print('Aguardando o comando para reiniciar: "esc"')
       keyboard.wait('esc')
+      time.sleep(2)
+      print('i --> 2')
       i = 2
